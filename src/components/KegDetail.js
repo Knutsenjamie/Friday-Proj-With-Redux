@@ -8,10 +8,11 @@ function KegDetail(props) {
     <React.Fragment>
       <h1>Keg Details</h1>
       <hr />
-      <h3>{keg.name}</h3>
-      <h3>{keg.price}</h3>
-      <h3>{keg.brand}</h3>
-      <h3>{keg.flavor}</h3>
+      <h3>Flavor Name: {keg.name}</h3>
+      <h3>Total Cost Per Keg: {keg.price}</h3>
+      <h3>Brand Name: {keg.brand}</h3>
+      <h3>Flavor: {keg.flavor}</h3>
+      <h3>There are currently: {keg.pintsRemaining} pints remaining</h3>
       {keg.pintsRemaining === 0 ?
         <h3>Out of stock! Sorry for the inconvenience!</h3>
         : <h3>{keg.pintsRemaining}</h3>}

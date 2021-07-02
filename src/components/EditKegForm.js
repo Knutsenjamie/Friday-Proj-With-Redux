@@ -6,14 +6,14 @@ import PropTypes from "prop-types";
 function EditKegForm(props){
     const { keg } = props;
   
-    function handleEditKegFormSubmission(event) {
-      event.preventDefault();
+    function handleEditKegFormSubmission(e) {
+      e.preventDefault();
       props.onEditKeg({
-        names: event.target.names.value, 
-        price: event.target.price.value, 
-        brand: event.target.brand.value, 
-        flavor: event.target.flavor.value, 
-        pintsRemaining: parseInt(event.target.pintsRemaining.value),
+        name: e.target.name.value, 
+        price: e.target.price.value, 
+        brand: e.target.brand.value, 
+        flavor: e.target.flavor.value, 
+        pintsRemaining: parseInt(e.target.pintsRemaining.value),
         id: keg.id
       });
     }
