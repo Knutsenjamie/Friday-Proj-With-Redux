@@ -91,27 +91,37 @@ import EditKegForm from './EditKegForm';
         });
     }
 
-  render() {
-    let currentlyVisibleState = null;
-    let buttonText = null;
+    render() {
+        let currentlyVisibleState = null;
+        let buttonText = null;
 
-    if (this.state.editing ) {      
-      currentlyVisibleState = <EditKegForm keg = {this.state.selectedKeg} onEditKeg = {this.handleEditingKegInList} />
-      buttonText = "Return to Keg List";
-    } else if (this.state.selectedKeg != null) {
-      currentlyVisibleState = <NewKegForm onNewKegCreation={this.handleAddingNewKegToList}  />;
-      buttonText = "Return to Keg List";
-    } else {
-      currentlyVisibleState = <KegList kegList={this.state.masterKegList} onKegSelection={this.handleChangingSelectedKeg} />;
-      buttonText = "Add Keg";
+        if (this.state.editing){
+            currentlyVisibleState = <EditKegForm keg = {this.state.selectedKeg} onEditKeg = {this.handleEditingKegInList} />
+            buttonText = "Return to Keg List"
+        } else if (this.state.selectedKeg != null) {
+            currentlyVisibleState =
+            <KegDetail
+            keg = {this.state.selectedKeg}
+            onClickingEdit = {this.handleEditClick}
+            onClickingBuy = {this.handleBuyClick}
+            onClickingRestock = {this.handleRestockClick}
+            onClickingDelete = {this.handleDeletingKeg} />;
+            buttonText = "Return to Keg List";
+        } else if (this.state.formVisibleOnPage) {
+            currentlyVisibleState = <NewKegForm onNewKegCreation={this.handleAddingNewKegToList} />;
+            buttonText = "Return to Keg List";
+        } else {
+            currentlyVisibleState = <KegList kegList={this.state.masterKegList} onKegSelection={this.handleChangingSelectedKeg} />;
+            buttonText = "Add New Keg";
+        }
+        
+        return (
+            <React.Fragment>
+                {currentlyVisibleState}
+                <button className="btn btn-warning" onClick={this.handleClick}>{buttonText}</button>
+            </React.Fragment>
+        );
     }
-    return (
-      <React.Fragment>
-        {currentlyVisibleState}
-        <button onClick={this.handleClick}>{buttonText}</button>
-      </React.Fragment>
-    );
-  }
 }
 
 export default KegControl;
