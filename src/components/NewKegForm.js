@@ -12,7 +12,7 @@ function NewKegForm(props) {
       brand: e.target.brand.value, 
       flavor: e.target.flavor.value, 
       price: e.target.price.value, 
-      pintsRemaining: parseInt(e.target.pintsLeft.value),
+      pintsRemaining: parseInt(e.target.pintsRemaining.value),
       id: v4() 
     });
   };
