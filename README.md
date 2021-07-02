@@ -41,9 +41,7 @@ https://github.com/Knutsenjamie/Friday-Project-5
 
 ## Component Diagram 
 
-<img src="Component Tree.png" alt="diagram of React component tree" width="200"/>
-
-<img src="Layout Idea.png" alt="diagram of React page layout" width="200"/>
+https://docs.google.com/document/d/1SefI6o8ek7kH2FdjhdDSfFOsLf4_tfj7mW-zaFfyVOQ/edit?usp=sharing
 
 ## Licensing
 
