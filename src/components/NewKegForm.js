@@ -4,22 +4,30 @@ import PropTypes from "prop-types";
 import ReusableForm from "./ReusableForm";
 
 function NewKegForm(props) {
+  
   function handleNewKegFormSubmission(e) {
     e.preventDefault();
-    props.onNewKegCreation({ name: e.target.name.value, brand: e.target.brand.value, flavor: e.target.flavor.value, price: e.target.price.value, amount: e.target.amount.value, id: v4() });
+    props.onNewKegCreation({ 
+      name: e.target.name.value, 
+      brand: e.target.brand.value, 
+      flavor: e.target.flavor.value, 
+      price: e.target.price.value, 
+      pintsRemaining: parseInt(e.target.pintsLeft.value),
+      id: v4() 
+    });
   };
 
   return (
     <React.Fragment>
       <ReusableForm
         formSubmissionHandler={handleNewKegFormSubmission}
-        button="Add new keg" />
+        buttonText="Add new keg" />
     </React.Fragment>
   );
 };
 
-NewKegForm.protoTypes = {
+NewKegForm.propTypes = {
   onNewKegCreation: PropTypes.func
-};
+}
 
 export default NewKegForm;
