@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# _Kombucha Tap Room_
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### _Building a web app with react fundamentals_
 
-## Available Scripts
+##### By:
+#####  _** Jamie Knutsen ©2021 **_
 
-In the project directory, you can run:
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* _Visual Studio Code_
+* _React_ 
+* _Node_
+* _JavaScript_
+* _JSX_
+* _HTML_
+* _CSS_ 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Description: 
+The Kombucha Tap Room was designed to utilize React fundamentals to make a basic working React application. 
 
-### `npm test`
+## Setup/Installation Requirements
+_You can view this webpage by checking out the url:_
+https://github.com/Knutsenjamie/Friday-Project-5
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
+* [Node] (https://nodejs.org/en/)
+* A text editor such as [VS Code] (https://code.visualstudio.com/)
 
-### `npm run build`
+### Installation
+1. Open terminal
+2. Input these commands into terminal's command line:
+3. `cd desktop`
+4. Clone https://github.com/Knutsenjamie/Tap-Room
+5. Run the command `code .` in your computer's terminal
+6. Open VS Code or other preffered text editor terminal within the project file
+7. To start a development server and view the project in the browser:
+  * Run the command 'npm install' to install dependencies
+  * Optionally, run the command 'npm run build' to make a bundle of the files
+  * Finally, run the command 'npm run start' to start a development server.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Component Diagram 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<img src="Component Tree.png" alt="diagram of React component tree" width="200"/>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<img src="Layout Idea.png" alt="diagram of React page layout" width="200"/>
 
-### `npm run eject`
+## Licensing
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Licensed under the [MIT License](license).
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Contact Information
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+_Jamie Knutsen (knutsenjamie@yahoo.com)_
