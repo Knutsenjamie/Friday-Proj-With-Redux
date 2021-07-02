@@ -4,76 +4,92 @@ import KegDetail from "./KegDetail";
 import NewKegForm from "./NewKegForm";
 import EditKegForm from './EditKegForm';
 
-class KegControl extends React.Component {
-  
-    constructor(props) {
-    super(props);
-    this.state = {
-      formVisibleOnPage: false,
-      createNewKeg: false,
-      masterKegList: [],
-      selectedKeg: null,
-      editing: false
-    }
-  }
-
-  showListOrForm = () => {
-    if (this.state.selectedKeg != null) {
-      this.setState({
+    class KegControl extends React.Component {
+    
+        constructor(props) {
+        super(props);
+        this.state = {
         formVisibleOnPage: false,
+        createNewKeg: false,
+        masterKegList: [],
         selectedKeg: null,
         editing: false
-      });
-    } else {
-      this.setState(prevState => ({
-        formVisibleOnPage: !prevState.formVisibleOnPage
-      }));
+        }
     }
-  }
 
-  handleClick = () => {
-    if (this.state.selectedKeg != null) {
-      this.setState({
-        formVisibleOnPage: false,
-        selectedKeg: null,
-        editing: false 
-      });
-    } else {
-      this.setState(prevState => ({
-        formVisibleOnPage: !prevState.formVisibleOnPage,
-      }));
+    handleClick = () => {
+        if (this.state.selectedKeg != null) {
+        this.setState({
+            formVisibleOnPage: false,
+            selectedKeg: null,
+            editing: false
+        });
+        } else {
+        this.setState(prevState => ({
+            formVisibleOnPage: !prevState.formVisibleOnPage
+        }));
+        }
     }
-  }
 
-  handleChangingSelectedKeg = (id) => {
-    const selectedKeg = this.state.masterKegList.filter(keg => keg.id === id)[0];
-    this.setState({selectedKeg: selectedKeg});
-  }
+    handleChangingSelectedKeg = (id) => {
+        const selectedKeg = this.state.masterKegList.filter(keg => keg.id === id)[0];
+        this.setState({selectedKeg: selectedKeg});
+    }
 
-  handleDeletingKeg = (id) => {
-    const newMasterKegList = this.state.masterKegList.filter(keg => keg.id !== id);
-    this.setState({
-      masterKegList: newMasterKegList,
-      selectedKeg: null
-    });
-  }
+    handleAddingNewKegToList = (newKeg) => {
+        const newMasterKegList = this.state.masterKegList.concat(newKeg);
+        this.setState({
+        masterKegList: newMasterKegList,
+        formVisibleOnPage: false
+        });
+    }
 
-  handleEditClick = () => {
-    console.log("handleEditClick reached!");
-    this.setState({editing: true});
-  }
+    handleEditClick = () => {
+        this.setState({editing: true});
+    }
+    
+    handleEditingKegInList = (kegToEdit) => {
+        const editedMasterKegList = this.state.masterKegList
+        .filter(keg => keg.id !== this.state.selectedKeg.id)
+        .concat(kegToEdit);
+        this.setState({
+            masterKegList: editedMasterKegList,
+            editing: false,
+            selectedKeg: kegToEdit
+        });
+    }
 
-  handleEditingKegInList = (kegToEdit) => {
-    const editedMasterKegList = this.state.masterKegList
-      .filter(keg => keg.id !== this.state.selectedKeg.id)
-      .concat(kegToEdit);
-    this.setState({
+    handleBuyClick = () => {
+        const selectedKeg = this.state.selectedKeg;
+        const pintBuy = Object.assign({}, selectedKeg, {pintsRemaining: selectedKeg.pintsRemaining - 1});
+        const editedMasterKegList = this.state.masterKegList
+        .filter(keg => keg.id !== this.state.selectedKeg.id)
+        .concat(pintBuy);
+        this.setState({
         masterKegList: editedMasterKegList,
-        editing: false,
-        selectedKeg: null
-      });
-  }
-  
+        selectedKeg: pintBuy
+        });
+    }
+
+    handleRestockClick = () => {
+        const selectedKeg = this.state.selectedKeg;
+        const kegRestock = Object.assign({}, selectedKeg, {pintsRemaining: selectedKeg.pintsRemaining + 124});
+        const editedMasterKegList = this.state.masterKegList
+            .filter(keg => keg.id !== this.state.selectedKeg.id)
+            .concat(kegRestock);
+        this.setState({
+            masterKegList: editedMasterKegList,
+            selectedKeg: kegRestock
+        });
+    }
+    
+    handleDeletingKeg = (id) => {
+        const newMasterKegList = this.state.masterKegList.filter(keg => keg.id !== id);
+        this.setState({
+            masterKegList: newMasterKegList,
+            selectedKeg: null
+        });
+    }
 
   render() {
     let currentlyVisibleState = null;
