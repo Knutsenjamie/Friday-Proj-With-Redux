@@ -26,9 +26,11 @@ function ReusableForm(props) {
           placeholder='Keg price' />
         <hr />
         <input
-          type='number'
-          name='amount'
-          placeholder='Keg amount' />
+          type="number"
+          name="pintsRemaining"
+          placeholder="Pints per keg (full-size is roughly 124 pints)"
+          min="0"
+          max="124" /> 
         <hr />
         <button type='submit'>{props.buttonText}</button>
         <hr />
@@ -37,9 +39,9 @@ function ReusableForm(props) {
   );
 };
 
-ReusableForm.protoTypes = {
+ReusableForm.propTypes = {
   formSubmissionHandler: PropTypes.func,
   buttonText: PropTypes.string
-};
+}
 
 export default ReusableForm;
