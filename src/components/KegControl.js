@@ -1,19 +1,34 @@
 import React from "react";
-import NewKegForm from "./NewKegForm";
 import KegList from "./KegList";
-import KegDetail from './KegDetail';
+import KegDetail from "./KegDetail";
+import NewKegForm from "./NewKegForm";
 import EditKegForm from './EditKegForm';
 
 class KegControl extends React.Component {
-  constructor(props) {
+  
+    constructor(props) {
     super(props);
     this.state = {
       formVisibleOnPage: false,
+      createNewKeg: false,
       masterKegList: [],
       selectedKeg: null,
       editing: false
-    };
-    this.handleClick = this.handleClick.bind(this);
+    }
+  }
+
+  showListOrForm = () => {
+    if (this.state.selectedKeg != null) {
+      this.setState({
+        formVisibleOnPage: false,
+        selectedKeg: null,
+        editing: false
+      });
+    } else {
+      this.setState(prevState => ({
+        formVisibleOnPage: !prevState.formVisibleOnPage
+      }));
+    }
   }
 
   handleClick = () => {
