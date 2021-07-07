@@ -39,10 +39,10 @@ input {
   margin: 8px 0;
   box-sizing: border-box;
   border-style: solid;
-  border-color: rgba(189, 184, 184, 0.893);
+  border-color: rgba(109, 109, 109, 0.893);
   border-width: 2px;
   font-size: medium;
-  background-color: rgba(189, 184, 184, 0.893);
+  background-color: rgba(109, 109, 109, 0.893);
 }
 
 
@@ -60,5 +60,21 @@ button {
   border-color: rgba(189, 184, 184, 0.893);
   border-width: 2px;
   font-weight: 500;
+}
+
+textarea {
+  width: 84%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: rgba(109, 109, 109, 0.893);
+  resize: none;
+  font-size: medium;
+  border-style: solid;
+  border-color: rgba(109, 109, 109, 0.893);
+  border-width: 5px;
+  margin-bottom: 1%;
 }
 
