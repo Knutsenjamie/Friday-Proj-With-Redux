@@ -10,11 +10,9 @@ import { connect } from 'react-redux';
         super(props);
         this.state = {
         formVisibleOnPage: false,
-        createNewKeg: false,
-        masterKegList: [],
         selectedKeg: null,
         editing: false
-        }
+        };
     }
 
     handleClick = () => {
@@ -37,11 +35,19 @@ import { connect } from 'react-redux';
     }
 
     handleAddingNewKegToList = (newKeg) => {
-        const newMasterKegList = this.state.masterKegList.concat(newKeg);
-        this.setState({
-        masterKegList: newMasterKegList,
-        formVisibleOnPage: false
-        });
+        const { dispatch } = this.props;
+        const { id, name, brand, flavor, price, pintsRemaining} = newKeg;
+        const action = {
+            type: 'ADD_KEG',
+            id: id,
+            name: name,
+            brand: brand,
+            flavor: flavor,
+            price: price,
+            pintsRemaining: pintsRemaining,
+        }
+        dispatch(action);
+        this.setState({formVisibleOnPage: false});
     }
 
     handleEditClick = () => {
