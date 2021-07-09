@@ -3,6 +3,7 @@ import KegList from "./KegList";
 import KegDetail from "./KegDetail";
 import NewKegForm from "./NewKegForm";
 import EditKegForm from './EditKegForm';
+import { connect } from 'react-redux';
 
     class KegControl extends React.Component {
         constructor(props) {
@@ -122,6 +123,8 @@ import EditKegForm from './EditKegForm';
         );
     }
 }
+
+KegControl = connect()(KegControl);
 
 export default KegControl;
 

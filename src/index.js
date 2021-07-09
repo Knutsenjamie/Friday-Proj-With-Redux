@@ -1,13 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import { createStore } from 'redux';
+import reducer from './reducers/keg-list-reducer';
+import { Provider } from 'react-redux';
 import App from  './components/App';
 import reportWebVitals from './reportWebVitals';
 
+const store = createStore(reducer);
+
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 
