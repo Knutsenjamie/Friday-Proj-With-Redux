@@ -55,13 +55,21 @@ import { connect } from 'react-redux';
     }
     
     handleEditingKegInList = (kegToEdit) => {
-        const editedMasterKegList = this.state.masterKegList
-        .filter(keg => keg.id !== this.state.selectedKeg.id)
-        .concat(kegToEdit);
+        const { dispatch } = this.props;
+        const { id, name, brand, flavor, price, pintsRemaining } = kegToEdit;
+        const action = {
+          type: 'ADD_KEG',
+          id: id,
+          name: name,
+          brand: brand,
+          flavor: flavor,
+          price: price,
+          pintsRemaining: pintsRemaining,
+        }
+        dispatch(action);
         this.setState({
-            masterKegList: editedMasterKegList,
-            editing: false,
-            selectedKeg: kegToEdit
+          editing: false,
+          selectedKeg: null
         });
     }
 
