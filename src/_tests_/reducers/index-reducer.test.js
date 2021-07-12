@@ -1,7 +1,7 @@
 import rootReducer from '../../reducers/index';
 import { createStore } from 'redux';
 import formVisibleReducer from '../../reducers/form-visible-reducer';
-import ticketListReducer from '../../reducers/ticket-list-reducer';
+import kegListReducer from '../../reducers/keg-list-reducer';
 
 
 let store = createStore(rootReducer);
@@ -18,7 +18,7 @@ describe("rootReducer", () => {
         id: 1
         }
         store.dispatch(action);
-        expect(store.getState().masterKegList).toEqual(ticketListReducer(undefined, action));
+        expect(store.getState().masterKegList).toEqual(kegListReducer(undefined, action));
     });
     
     test('Check that TOGGLE_FORM action works for formVisibleReducer and root reducer', () => {
