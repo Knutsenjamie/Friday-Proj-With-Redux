@@ -6,6 +6,7 @@ import EditKegForm from './EditKegForm';
 import PropTypes from "prop-types";
 import { connect } from 'react-redux';
 
+
     class KegControl extends React.Component {
         constructor(props) {
         super(props);
